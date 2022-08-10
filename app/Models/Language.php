@@ -17,6 +17,6 @@ class Language extends Model
 
     //Relacion M a M con paises
     public function paises(){
-        return $this->belongsToMany(Country::class,'country_languages','language_id','country_id');
+        return $this->belongsToMany(Country::class,'country_languages','language_id','country_id')->withPivot('official');
     }
 }
